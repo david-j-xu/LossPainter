@@ -20,8 +20,11 @@ public class Program {
 		//TODO: Handle terminal input
 		
 		Brush brush = new Brush(BRUSH_PATH);
+		Painting painting = new Painting(1000, 1000, brush);
 		
-		Brush.writeImage(brush.getBrush(300, 7), "output");
+		painting.paint(100, 2, 600, 600, 24, 16, 29);
+		
+		painting.writeImage("painting");
 		
 
 	}
