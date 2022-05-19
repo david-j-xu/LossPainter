@@ -1,0 +1,2 @@
+module loss_painter {
+}
