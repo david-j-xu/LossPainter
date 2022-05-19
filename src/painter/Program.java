@@ -8,27 +8,25 @@ import java.io.IOException;
  */
 public class Program {
 	
-	private static final String BRUSH_PATH = "brushes/brush.png";
+	private static final String[] BRUSH_PATHS = new String[]  {"brushes/brush.png",
+															   "brushes/brush2.png",
+															   "brushes/brush3.png",
+															   "brushes/brush4.png",
+															   "brushes/brush5.png",
+															 };
 
 	/**
 	 * Main function
-	 * @param args The arguments from stdin, args[1] is the input file, args[2] is output
+	 * @param args The arguments from stdin
 	 * @throws IOException 
 	 * 
 	 */
 	public static void main(String[] args) throws IOException {
-		//TODO: Handle terminal input
-		
-		Brush brush = new Brush(BRUSH_PATH);
-		Painting painting = new Painting(1000, 1000, brush);
-		
-		painting.paint(100, 2, 600, 600, 24, 16, 29);
-		
-		painting.writeImage("painting");
+		Painter painter = new Painter(BRUSH_PATHS, "input/coco.png", "output/coco.png");
+		painter.paint();
+		painter.output();
 		
 
 	}
-	
-	
 
 }

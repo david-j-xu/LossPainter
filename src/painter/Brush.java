@@ -30,7 +30,7 @@ public class Brush {
                 int rgb = buffer.getRGB(i, j);
                 
                 // set the locations of non-empty/non-white pixels
-                if (rgb != 0) {
+                if (rgb < 0) {
                 	matrix[i][j] = true;
                 }
             }
@@ -44,7 +44,7 @@ public class Brush {
 	 * @param angle angle to be rotated in radians (counterclockwise)
 	 * @return matrix representing the correctly sized brush
 	 */
-	public boolean[][] getBrush(int size, int angle) {
+	public boolean[][] getBrush(int size, double angle) {
 		int resized_width;
 		int resized_height;
 		double scale;
@@ -128,7 +128,7 @@ public class Brush {
                 }
             }
             
-            File outputFile = new File("./output/" + outputName + ".png");
+            File outputFile = new File(outputName);
             ImageIO.write(output, "png", outputFile);
         } catch (IOException e) {
             e.printStackTrace();
